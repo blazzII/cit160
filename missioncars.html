@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CIT 160 - Lab 2 - Variable Example</title>
+
+  <link rel="stylesheet" href="css/missioncars.css">
+  <script>
+    function getTotal() {
+      // DECLARATIONS
+      const corollaOilCap = 4.2; // quarts
+      const alitmaOilCap = 5.3;
+      let total = 0; // Total Oil Capacity in quarts
+
+      // INPUT - get 2 variables, corolla, altima
+      const corollas = parseInt(document.querySelector('#corollas').value);
+      const altimas = parseInt(document.querySelector('#altimas').value);
+
+      // PROCESSING - multiply count * oil capacity
+      total = corollas * corollaOilCap + altimas * alitmaOilCap;
+
+      // OUTPUT
+      document.querySelector('#total').innerHTML = `Total: ${total.toFixed(2)} quarts.`;
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>California San Jose Mission</h1>
+    <h2>Determine Oil Capacity</h2>
+    <label># of Corollas: <input type="text" id="corollas" placeholder="0"></label>
+    <label># of Altimas: <input type="text" id="altimas"></label>
+    <button onclick="getTotal()">Compute Total</button>
+    <hr>
+    <p id="total"></p>
+  </div>
+
+</body>
+
+</html>
