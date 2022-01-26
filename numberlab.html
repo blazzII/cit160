@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Numbers and Operators</title>
+  <link rel="stylesheet" href="css/numbers.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Sales Slip</h1>
+    <h2>Student Name</h2>
+  </header>
+  <main>
+    <h3>Line Items</h3>
+    <div class="tableform">
+      <span class="heading">Description</span>
+      <span class="heading">Quantity</span>
+      <span class="heading">Price</span>
+      <label><input type="text" id="desc1" /></label>
+      <label><input type="text" id="q1" size="3" /></label>
+      <label><input type="text" id="p1" size="5" /></label>
+      <label><input type="text" id="desc2" /></label>
+      <label><input type="text" id="q2" size="3" /></label>
+      <label><input type="text" id="p2" size="5" /></label>
+      <label><input type="text" id="desc3" /></label>
+      <label><input type="text" id="q3" size="3" /></label>
+      <label><input type="text" id="p3" size="5" /></label>
+    </div>
+    <h3>Discount</h3>
+    <label class="heading">Discount %: <input type="text" id="discount" placeholder=".10" /></label>
+    <h3>Tax</h3>
+    <label class="heading">Tax %: <input type="text" id="tax" placeholder=".075" /></label>
+
+    <div class="process">
+      <button onclick="getTotal()">Submit Sales Slip</button>
+    </div>
+    <p id="output"></p>
+  </main>
+  <footer>
+    &copy;<span id="copyright"></span> &bull; Student Name &bull; BYU-Idaho
+    &bull; CIT 160
+  </footer>
+
+  <script>
+    document.querySelector('#copyright').textContent =
+      new Date().getFullYear();
+
+    function getTotal() {
+      // INPUT
+      let q1 = 0;
+      let p1 = 0;
+      let q2 = 0;
+      let p2 = 0;
+
+
+      q1 = parseInt(document.querySelector('#q1').value);
+
+
+
+      // PROCESSING
+
+      //OUTPUT
+      document.querySelector('#output').innerHTML = ``;
+    }
+  </script>
+</body>
+
+</html>
