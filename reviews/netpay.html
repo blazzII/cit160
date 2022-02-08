@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Net Pay Calculator</title>
+  <script>
+    function calcNetPay() {
+      // Declarations
+      const regRate = 15; // $ per hour
+      const otRate = 22.50;
+      const taxRate = .15;
+      let grosspay = 0;
+      let taxamount = 0;
+      let netpay = 0;
+      // Input
+      let reghours = parseFloat(document.querySelector('#reghours').value);
+      let othours = parseFloat(document.querySelector('#othours').value);
+
+      // Processing
+      grosspay = regRate * reghours + otRate * othours;
+      taxamount = taxRate * grosspay;
+      netpay = grosspay - taxamount;
+      // Output
+      document.querySelector('#netpay').innerHTML = `$${netpay.toFixed(2)}`;
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Net Pay Calculator</h1>
+
+  <label for="reghours">Regular Hours: </label><input type="text" id="reghours">
+  <label for="othours">Overtime Hours: </label><input type="text" id="othours">
+  <button onclick="calcNetPay()">Get Net Pay</button>
+  <hr>
+  <div id="netpay"></div>
+
+</body>
+
+</html>

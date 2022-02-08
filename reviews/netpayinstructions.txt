@@ -1,0 +1,18 @@
+Write a program that calculates an employee's after tax pay.
+
+The regular pay rate is constant of $15 per hour.
+The overtime pay rate is constant at $22.50 per hour.
+The user needs to be able to enter the total regular hours and total overtime hours worked for the period.
+The tax rate is constant at 15% of the gross amount earned during the period.
+Example
+The user enters 40 regular hours and 2.5 hours of overtime.
+The calculation of after tax pay would be regular pay (15 * 40) + overtime pay (22.50 * 2.5) - the tax amount.
+The tax amount is 15% of that gross pay which is .15( 15 * 40 + 22.5 * 2.5).
+600 (reg) + 56.25 (ot) - 98.44 (tax) = $557.81
+
+Full credit warrants that you include code comments for the JavaScript that demonstrates some planning separated by input, processing, and output comments.
+Do not write any CSS markup for your solution.
+Your JavaScript needs to be embedded into the HTML document because your submission is just one .html file.
+Your program should handle real number inputs, not just integers.
+Your program does not need to validate the user input.
+Output Requirements: $ formatted amount with two decimals, e.g., $234.56

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 5</title>
+  <script>
+    function calcCircumference() {
+      // INPUT - get the radius from the user  r
+      let r = document.querySelector('#r').value;
+      r = parseFloat(r);
+      // PROCESSING - calculate the circumference using c = 2🍰r
+      let c = 2 * Math.PI * r;
+      // OUTPUT - display c
+      document.querySelector(
+        '#output'
+      ).innerHTML = `Circle Circumference: <strong>${c.toFixed(1)}</strong> units.`;
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Circumference</h1>
+  <label for="r">Enter the Radius of the Circle: </label>
+  <input type="text" id="r" />
+  <button onclick="calcCircumference()">Get Circumference</button>
+  <p id="output"></p>
+</body>
+
+</html>
