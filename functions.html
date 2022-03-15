@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+</head>
+
+<body>
+  <h1>Functions</h1>
+  <button onclick="myFunction()">My Function</button>
+  <button id="button2">Add Event Listener Function</button>
+  <div id="output1"></div>
+  <div id="output2"></div>
+  <hr>
+
+  <script>
+    function myThirdFunction() {
+      button2.textContent = "Changed!";
+    }
+
+
+    function myFunction() {
+      document.querySelector('#output1').textContent = "Hello World!";
+      let output2 = mySecondFunction(document.querySelector('#output1').textContent);
+      document.querySelector('#output2').textContent = output2;
+    }
+
+    function mySecondFunction(x) {
+      return `${x} Welcome to my computer.`;
+    }
+
+    const button2 = document.querySelector('#button2');
+    const h1 = document.querySelector('h1');
+
+    button2.addEventListener('click', myThirdFunction);
+    h1.addEventListener('click', () => {
+      h1.style.color = 'red';
+    });
+
+
+  </script>
+</body>
+
+</html>

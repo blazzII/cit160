@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Logical Operators</title>
+  <link href="css/template.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <h1>Week 7: Logical Operators in Conditions</h1>
+    <h2>Brother Blazzard</h2>
+  </header>
+  <main>
+    <ul>
+      <li>AND &&</li>
+      <li>OR ||</li>
+      <li>NOT !</li>
+    </ul>
+    <h3>Testing</h3>
+    <label>Username: <input type="text" id="username" /></label>
+    <label>Password: <input type="password" id="password" /></label>
+    <label><button onclick="checkCredentials()">Check Credentials</button></label>
+    <hr />
+    <p id="output"></p>
+  </main>
+  <footer>
+    &copy;2021 &bull; Brother Blazzard &bull; BYU-Idaho &bull; CIT 160
+  </footer>
+  <script>
+    const UNAME = 'Bob';
+    const UPASS = 'shazam';
+
+    function checkCredentials() {
+      let message = '';
+      //input
+      let username = document.querySelector('#username').value;
+      let password = document.querySelector('#password').value;
+
+      // processing - compare strings
+      if (username === UNAME && password === UPASS) {
+        // valid
+        message = "🌴 Welcome!";
+      } else {
+        message = "💀 Access Denied."
+      }
+      // output
+      document.querySelector('#output').textContent = message;
+    }
+  </script>
+</body>
+
+</html>

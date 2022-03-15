@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+
+</head>
+
+<body>
+  <h1>Calculator</h1>
+  <span id="num1"></span>
+  <select id="operand">
+    <option value="" selected disabled>-- Select An Operand--</option>\
+    <option value="+">+</option>
+    <option value="-">-</option>
+  </select><span id="num2"></span> =
+  <input type="text" id="answer"><br>
+  <hr>
+  <button onclick="checkMath()">Check</button>
+  <hr>
+  <p id="message"></p>
+
+
+  <script>
+    const MAX = 11;
+    let num1 = Math.floor(Math.random() * MAX);
+    let num2 = Math.floor(Math.random() * MAX);
+    document.querySelector('#num1').textContent = ` ${num1} `;
+    document.querySelector('#num2').textContent = ` ${num2} `;
+
+    function checkMath() {
+      // input - get operand and get answer
+      let operand = document.querySelector('#operand').value;
+      let userAnswer = parseInt(document.querySelector('#answer').value);
+
+      // processing - if + then set answer key to addition or set it to subtraction // compare answer key to the input answer and build appr. message
+
+      let answerKey = 0;
+      let message = '';
+
+      // determine answerKey
+      if (operand === "+") {
+        answerKey = num1 + num2;
+      } else {
+        answerKey = num1 - num2;
+      }
+      // determine message
+      if (answerKey === userAnswer) {
+        message = `Correct! 🏆`;
+      } else {
+        message = `Incorrect 😢`;
+      }
+
+
+      // OUTPUT - post message to user
+      document.querySelector('#message').textContent = message;
+    }
+  </script>
+</body>
+
+</html>

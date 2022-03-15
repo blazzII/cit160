@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>asfasdf</title>
+  <script>
+    function countDown() {
+      let output = "";
+      let skip = parseInt(document.getElementById('integerBox').value);
+      let i = 100;
+      while (i >= 0) {
+        output += `${i} <br>`;
+        i -= skip;
+      }
+      document.getElementById('outputDiv').innerHTML = output;
+    }
+  </script>
+</head>
+
+<body>
+  <input type="text" id="integerBox">
+  <button onclick="countDown()">Do It!</button>
+  <div id="outputDiv"></div>
+</body>
+
+</html>
