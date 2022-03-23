@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wind Chill</title>
+</head>
+
+<body>
+  <h2>Wind Chill</h2>
+
+  <label for="temperature">Temperature<input type="text" id="temperature"></label>
+  <br>
+  <label for="windSpeed">Wind Speed<input type="text" id="windSpeed"></label>
+  <br>
+  <button onclick="doInputOutput()">Wind Chill</button>
+  <br>
+  <div id="output"></div>
+
+
+  <script>
+    function doInputOutput() {
+      // Declarations
+      let windchillfactor = 0;
+
+      // Input
+      let tempF = parseFloat(document.querySelector('#temperature').value);
+      let speed = parseFloat(document.querySelector('#windSpeed').value);
+
+      if (tempF < 50 && speed >= 3) {
+        windchillfactor = windChill(tempF, speed);
+      }
+
+      // Output
+      document.querySelector("#output").innerHTML = `Wind chill is: ${windchillfactor.toFixed(0)} F`;
+    }
+
+    function windChill(t, s) {
+      // Processing
+      return 35.74 + 0.6215 * t - 35.75 * Math.pow(s, 0.16) + 0.4275 * t * Math.pow(s, 0.16);
+
+    }
+  </script>
+
+</body>
+
+</html>
